@@ -5,7 +5,7 @@ version: 0.3.2
 commands:
   generate: 
     description: initial world generation
-    usage: just do it
+    usage: generate <world> <x1> <y1> <x2> <y2>
   statistic: 
-    description: try find stronghold
-    usage: just do it
+    description: Counting blocks
+    usage: statistic <world> <x1> <y1> <x2> <y2>

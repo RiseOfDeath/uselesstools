@@ -13,7 +13,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.config.Configuration;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 
 
 public class uselesstools extends JavaPlugin {
@@ -60,7 +59,7 @@ public class uselesstools extends JavaPlugin {
 						for(int i = Integer.parseInt(args[1]);i<=Integer.parseInt(args[3]);i++){
 							for(int j =Integer.parseInt(args[2]);j<=Integer.parseInt(args[4]);j++){
 								sender.getServer().getWorld(args[0]).getChunkAt(i, j);
-								sender.getServer().getWorld(args[0]).unloadChunk(i, j);
+								sender.getServer().getWorld(args[0]).unloadChunk(i, j, true, false);
 								count++;
 								done = count/work*100;
 							}
@@ -73,16 +72,19 @@ public class uselesstools extends JavaPlugin {
 					catch(CommandException e){
 						sender.sendMessage(e.toString());						
 					}
+					return true;
 					
 				}
 				else{
 					//no correct arguments
-					sender.sendMessage("Wrong arguments. Type <command> <world> <x1> <y1> <x2> <y2>");	
+					//sender.sendMessage("Wrong arguments. Type <command> <world> <x1> <y1> <x2> <y2>");	
+					return false;
 				}
 			}
 			else{
 				//player no OP ]:->
 				sender.sendMessage("Oh... you don't OP, sorry...");
+				return true;
 			}
 		}
 		if(commandLabel.contains("statistic"))
@@ -102,7 +104,7 @@ public class uselesstools extends JavaPlugin {
 				for(int i = Integer.parseInt(args[1]);i<=Integer.parseInt(args[3]);i++){
 					for(int j =Integer.parseInt(args[2]);j<=Integer.parseInt(args[4]);j++){
 						readblocks(sender.getServer().getWorld(args[0]).getChunkAt(i, j));
-						sender.getServer().getWorld(args[0]).unloadChunk(i, j);
+						sender.getServer().getWorld(args[0]).unloadChunk(i, j, true, false);
 						count++;
 						
 					}
@@ -115,21 +117,23 @@ public class uselesstools extends JavaPlugin {
 					sender.sendMessage("Block " + i + ": " +Integer.toString(blocks[i]));
 		        }
 				sender.sendMessage("Job is done");
-				return true;
+				
 			}
 			catch(CommandException e){
 				sender.sendMessage(e.toString());						
 			}
+			return true;
 			}
 			else
 			{
-				sender.sendMessage("Wrong arguments. Type <command> <world> <x1> <y1> <x2> <y2>");
+				//sender.sendMessage("Wrong arguments. Type <command> <world> <x1> <y1> <x2> <y2>");
 				return false;
 			}
 			}
 			else
 			{
 				sender.sendMessage("Oh... you don't OP, sorry...");
+				return true;
 			}
 		}
 
