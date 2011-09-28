@@ -1,5 +1,5 @@
 name: Useless Tools
-main: riseofdeath.generator
+main: riseofdeath.uselesstools
 author: RiseOfDeath aka ROD
 version: 0.3.2
 commands:

@@ -16,7 +16,7 @@ import org.bukkit.util.config.Configuration;
 import com.sun.xml.internal.ws.util.StringUtils;
 
 
-public class generator extends JavaPlugin {
+public class uselesstools extends JavaPlugin {
 
 	public static Logger log;
     public static Server server;
