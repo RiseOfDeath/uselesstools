@@ -1,0 +1,11 @@
+name: Useless Tools
+main: riseofdeath.generator
+author: RiseOfDeath aka ROD
+version: 0.3.2
+commands:
+  generate: 
+    description: initial world generation
+    usage: just do it
+  statistic: 
+    description: try find stronghold
+    usage: just do it
